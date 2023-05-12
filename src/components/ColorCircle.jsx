@@ -1,26 +1,38 @@
 import styles from "../styles/ColorCircle.module.css";
 import { FiCopy } from "react-icons/fi";
-import { AiOutlineLock } from "react-icons/ai";
+import { BiLockAlt } from "react-icons/bi";
+import { BiLockOpenAlt } from "react-icons/bi";
 
-export function ColorCircle({ colorState, blockColor }) {
+export function ColorCircle({ colorState, blockColor, blockState }) {
     return (
-        <div
-            className={styles.colorCircle}
-            style={{ backgroundColor: colorState }}
-        >
+        <div className={styles.wrapper}>
+            <div
+                className={styles.colorCircle}
+                style={{ backgroundColor: colorState }}
+                onClick={() => {
+                    navigator.clipboard.writeText(colorState);
+                }}
+            ></div>
+            <div className={styles.colorName}>
                 <span className={styles.hexCode}>{colorState}</span>
-            <div className={styles.iconsSpan}>
-                <span
-                    className={styles.copySpan}
-                    onClick={() => {
-                        navigator.clipboard.writeText(colorState);
-                    }}
-                >
-                    <FiCopy />
-                </span>
-                <button onClick={(e) => blockColor(e)}>
-                    <AiOutlineLock />
-                </button>
+                <div className={styles.iconsSpan}>
+                    <span
+                        className={`${styles.copySpan} ${styles.icon}`}
+                        onClick={() => {
+                            navigator.clipboard.writeText(colorState);
+                        }}
+                    >
+                        <FiCopy />
+                    </span>
+
+                    <span
+                        className={`${styles.lockSpan} ${styles.icon}`}
+                        onClick={(e) => blockColor(e)}
+                    >
+                        {!blockState ? <BiLockOpenAlt className={styles.icon} />
+                        : <BiLockAlt className={styles.icon} />}
+                    </span>
+                </div>
             </div>
         </div>
     );

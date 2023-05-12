@@ -1,35 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&display=swap');
-/* font-family: 'B612 Mono', monospace; */
 
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
 
 .colorCircle {
-
+    cursor: pointer;
     margin: 0 20px;
-    height: 250px;
-    width: 255px;
-    border-radius: 175px;
+    height: 350px;
+    width: 225px;
+    border-radius: 175px 175px 0px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     flex-direction: column;
 
+    transition: all 0.5s ease;
+    transform: translateY(100px);
+
 
 }
 
 
+.colorCircle:hover {
+    -webkit-box-shadow: 10px 66px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 66px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 66px 5px 0px rgba(0, 0, 0, 0.75);
+    
+    transform: translateY(10px);
+}
+
+
+.colorCircle:active{
+    -webkit-box-shadow: 10px 66px 5px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 10px 66px 5px 0px rgba(255, 255, 255, 0.75);
+    box-shadow: 10px 66px 5px 0px rgba(255, 255, 255, 0.75);
+}
+
+
+.colorName {
+    padding-top: 5px;
+    height: 50px;
+    width: 225px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
 .hexCode {
-    font-family: 'B612 Mono';
-    outline: blue;
+    font-family: var(--main-family);
+
 
 }
 
 .iconsSpan {
+    padding: 4px;
     display: flex;
     gap: 10px;
+    
 }
 
-.copySpan {
+.icon{
+    transition: all 0.2s ease;
+}
+
+.icon:hover{
+    transform: scale(1.1);
     cursor: pointer;
-
+    color: rgba(0, 0, 0, 0.462)
+    
+    
 }
+
+.icon:active{
+    transform: scale(1);
+}
+
