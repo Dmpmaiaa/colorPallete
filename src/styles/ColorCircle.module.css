@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&display=swap');
+/* font-family: 'B612 Mono', monospace; */
+
+
+.colorCircle {
+
+    margin: 0 20px;
+    height: 250px;
+    width: 255px;
+    border-radius: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+
+
+}
+
+
+.hexCode {
+    font-family: 'B612 Mono';
+    outline: blue;
+
+}
+
+.iconsSpan {
+    display: flex;
+    gap: 10px;
+}
+
+.copySpan {
+    cursor: pointer;
+
+}
