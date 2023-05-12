@@ -12,6 +12,9 @@ h1 {
     font-size: 50px;
     color: #867070;
 }
+span{
+    transition: all 1s ease;
+}
 
 .wrapper {
     display: flex;

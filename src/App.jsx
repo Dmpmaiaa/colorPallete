@@ -5,22 +5,20 @@ import { rgbToHex, generatePalette } from "./auxiliary/helperMethods";
 import { ColorCircle } from "./components/ColorCircle";
 import styles from "./styles/Main.module.css";
 
-
 function App() {
     const [colorPalette, setColorPalette] = useState(generatePalette());
+    const [letters, setLetters] = useState(["B", "y", "t", "e", "s"]);
 
-    const generateNewPallete = (e) => {
-        
-            setColorPalette((prevPalette) =>
-                prevPalette.map((el) => {
-                    if (el.blocked === false) {
-                        return { ...el, color: rgbToHex() };
-                    } else {
-                        return el;
-                    }
-                })
-            );
-        
+    const generateNewPallete = () => {
+        setColorPalette((prevPalette) =>
+            prevPalette.map((el) => {
+                if (el.blocked === false) {
+                    return { ...el, color: rgbToHex() };
+                } else {
+                    return el;
+                }
+            })
+        );
     };
 
     useEffect(() => {
@@ -52,9 +50,11 @@ function App() {
     return (
         <>
             <div className={styles.container}>
-
-                <h1>Bytes 4 Coolors</h1>
-
+                <h1>
+                    {letters.map((el, idx) => (
+                        <span style={{ color: colorPalette[idx].color }}>{el}</span>
+                    ))} 4 Coloors
+                </h1>
                 <div className={styles.wrapper}>
                     {colorPalette.map((cor, idx) => (
                         <div>
@@ -66,7 +66,9 @@ function App() {
                         </div>
                     ))}
                 </div>
-                <button className={styles.btn} onClick={generateNewPallete}>Gerar paleta</button>
+                <button className={styles.btn} onClick={generateNewPallete}>
+                    Gerar paleta
+                </button>
             </div>
         </>
     );
