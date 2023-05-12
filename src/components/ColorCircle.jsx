@@ -17,7 +17,7 @@ export function ColorCircle({ colorState, blockColor, blockState }) {
                 <span className={styles.hexCode}>{colorState}</span>
                 <div className={styles.iconsSpan}>
                     <span
-                        className={`${styles.copySpan} ${styles.icon}`}
+                        className={`${styles.icon}`}
                         onClick={() => {
                             navigator.clipboard.writeText(colorState);
                         }}
