@@ -53,7 +53,7 @@ function App() {
         <>
             <div className={styles.container}>
 
-                <h1>Bytes 4 Coloors</h1>
+                <h1>Bytes 4 Coolors</h1>
 
                 <div className={styles.wrapper}>
                     {colorPalette.map((cor, idx) => (
